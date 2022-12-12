@@ -1,13 +1,13 @@
 name: Testing
 
-on:
-  push:
-    branches:
-      - master
-      - 'dependabot/**'
-  pull_request:
-    branches:
-      - '**'
+#on:
+#  push:
+#    branches:
+#      - master
+#      - 'dependabot/**'
+#  pull_request:
+#    branches:
+#      - '**'
 
 env:
   CI: true

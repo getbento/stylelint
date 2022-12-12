@@ -1,0 +1,30 @@
+# Create a package here: https://github.com/orgs/getbento/packages?repo_name=restaurant-websites
+# Only commits pushed to master gets a package.
+
+name: GitHub Package
+
+on:
+  push:
+    branches: [browser-bundle]
+
+jobs:
+  package:
+    name: Package Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+#    env:
+#      PRIVATE_LIBRARY_GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        registry-url: https://npm.pkg.github.com/
+        node-version-file: '.nvmrc'
+        cache: 'npm'
+
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
