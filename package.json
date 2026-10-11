@@ -1,6 +1,6 @@
 {
   "name": "@getbento/stylelint",
-  "version": "14.5.4",
+  "version": "14.5.5",
   "description": "A mighty, modern CSS linter.",
   "keywords": [
     "css-in-js",
